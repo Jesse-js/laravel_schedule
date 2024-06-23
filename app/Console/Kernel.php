@@ -14,6 +14,7 @@ class Kernel extends ConsoleKernel
     protected function schedule(Schedule $schedule): void
     {
         // $schedule->command('inspire')->hourly();
+        $schedule->command('app:test-command')->everyMinute();
         $schedule->command('app:my-test')->before(function () {
             Log::info("Before command in console.php");
         })->after(function () {
