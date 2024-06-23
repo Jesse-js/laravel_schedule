@@ -18,7 +18,8 @@ class Kernel extends ConsoleKernel
             Log::info("Before command in console.php");
         })->after(function () {
             Log::info("After command in console.php");
-        })->everyMinute();
+        })->daily()->timezone('America/Sao_Paulo')
+            ->at('23:03')->name('my-test');
     }
 
     /**
